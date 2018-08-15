@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import mock
 
-import sample
+sys.modules['unexisted_lib_1'] = mock.Mock()
+sys.modules['unexisted_lib_2'] = mock.Mock()
+sys.modules['unexisted_lib_3'] = mock.Mock()
+sys.modules['unexisted_lib_4'] = mock.Mock()
