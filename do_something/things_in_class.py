@@ -1,6 +1,6 @@
-import unexisted_lib_1
-from unexisted_lib_2 import unexisted_function
-from unexisted_lib_3 import unexisted_class
+import nonexistent_lib_1
+from nonexistent_lib_2 import nonexistent_function
+from nonexistent_lib_3 import nonexistent_class
 
 
 class ClassObject(object):
@@ -14,29 +14,50 @@ class ClassObject(object):
         self.param_2 = param_2
         self.param_3 = param_3
 
+    # private method    - need to mock!
+    def __private_method(self):
+        print 'This is private method!'
+        return 'private_method'
+
     def first_function(self, variable):
         """
         Function inside class
         :param variable: random
         :return:
         """
-        first_var = unexisted_function(para=variable)
+        print('...Some code...')
+        first_var = nonexistent_function(para=variable)
         return first_var
 
     def run_function_inside_and_outside_class(self):
         # run function inside class
         variable_1 = self.first_function('any_data')
+        result_from_private = self.__private_method()
         # run function outside class
         variable_2 = function_outside_class()
+        print variable_1, variable_2, result_from_private
         # To have more test case
         if variable_1 and variable_2:
             # this function for assert condition
-            unexisted_class.unexisted_func()
+            nonexistent_class.unexisted_func()
             return True
         return False
 
+
 def function_outside_class():
     print('This is function outside the class')
-    if unexisted_lib_1.do_something():
+    if nonexistent_lib_1.do_something():
         return True
     return False
+
+################################INHRERITED CLASS##############################################
+# --- Problems --- [x]
+
+from nonexistent_lib_4 import NonExistentClass
+
+
+class InheritiedFromOtherClass(NonExistentClass):
+    def unit_test_1(self):
+        print 'This is method in Inherited Class'
+        pass
+
