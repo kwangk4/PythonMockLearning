@@ -8,12 +8,12 @@ def return_one_value(number_1, number_2):
     """
     :param number_1: int, double
     :param number_2: int, double
-    :return: sum of 2 incremented number
+    :return: sum of 2 increased number
     """
     number_1 += 10
-    print ('number 1 is incremented')
+    print ('number 1 is increased by 10')
     number_2 += 20
-    print ('number 2 is incremented')
+    print ('number 2 is increased by 20')
     return number_1 + number_2
 
 
@@ -40,15 +40,17 @@ def run_nonexistent_functions():
     if string_1.split('_')[0] == string_2.split('_')[0]:
         print('-------Same name------')
         return
-    string_1 = nonexistent_class.get_string_1(para=nonexistent_variable)
-    string_2 = nonexistent_lib_1.get_string_2(para=nonexistent_variable)
+    string_1 = nonexistent_class.get_new_string(para=nonexistent_variable)
+    string_2 = nonexistent_lib_1.get_new_string(para=nonexistent_variable)
     return string_1, string_2
 
 
 def try_and_except_function():
+
     try:
-        print('---This is try---')
+        nonexistent_function()
+        print('...Some Code...')
         return True
-    except:
-        print('---This is except---')
-        raise Exception('except')
+    except Exception:
+        print('...Some Code...')
+        raise ValueError('except')
