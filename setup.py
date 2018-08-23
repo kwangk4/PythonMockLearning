@@ -1,5 +1,3 @@
-
-
 from setuptools import setup, find_packages
 
 
@@ -8,13 +6,12 @@ with open('README.rst') as f:
 
 
 setup(
-    name='sample',
+    name='do_something',
     version='0.1.0',
-    description='Sample package for Python-Guide.org',
+    description='Python Mock Learning & Project Structuring Learning',
     long_description=readme,
-    author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author='Quang Nguyen',
+    author_email='nguyenvan.kwang193@gmail.com',
     packages=find_packages(exclude=('tests', 'docs'))
 )
 
